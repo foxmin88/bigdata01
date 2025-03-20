@@ -1,0 +1,1 @@
+This repository maintains the code used in the first semester.
