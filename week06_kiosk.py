@@ -1,9 +1,12 @@
 #1) 아아 : 2000 2) 라떼 : 2500
 from operator import index
 
-drinks = ["아이스 아메리카노", "카페 라떼", "수박 주스"]
-prices = [2000, 2500, 4000]
-amounts = [0, 0, 0]
+drinks = ["아이스 아메리카노", "카페 라떼", "수박 주스", "딸기 주스"]
+prices = [2000, 2500, 4000, 4200]
+amounts = list()
+for _ in range(len(drinks)):
+    amounts.append(0)
+
 # drinks = ["아이스 아메리카노"]
 # prices = [2000]
 # amounts = [0]
