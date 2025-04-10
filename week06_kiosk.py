@@ -4,8 +4,14 @@ prices = [2000, 2500, 4000]
 amounts = [0, 0, 0]
 total_price = 0
 
+menu_texts = ""
+for j in range(len(drinks)):
+    menu_texts = menu_texts + f"{j+1}) {drinks[j]} {prices[j]}원 : "
+menu_texts = menu_texts + f"{len(drinks)+1}) 주문 종료 :"
+
 while True:
-    menu = input(f"1) {drinks[0]} {prices[0]}원 2) {drinks[1]} {prices[1]} 3) {drinks[2]} {prices[2]} 4) 주문종료 : ")
+#    menu = input(f"1) {drinks[0]} {prices[0]}원 2) {drinks[1]} {prices[1]} 3) {drinks[2]} {prices[2]} 4) 주문종료 : ")
+    menu = input(menu_texts)
     if menu == "1":
         print(f"{drinks[0]}를 주문하셨습니다. 가격은 {prices[0]}원 입니다")
         total_price = total_price + prices[0]
