@@ -11,19 +11,13 @@ total_price = 0
 amounts = [0] * len(drinks)
 
 def order_process(idx):
-    """
-    주문 처리 함수 1) 주문 디스플레이 2) 총 주문 금액 누산 3) 주문 품목 수량 업데이트
-    :return: 없음
-    """
     global total_price
     print(f"{drinks[idx]}를 주문하셨습니다. 가격은 {prices[idx]}원 입니다")
     total_price = total_price + prices[idx]
     amounts[idx] = amounts[idx] + 1
 
-menu_texts = ""
-for j in range(len(drinks)):
-    menu_texts = menu_texts + f"{j+1}) {drinks[j]} {prices[j]}원 : "
-menu_texts = menu_texts + f"{len(drinks)+1}) 주문 종료 :"
+menu_texts = "".join([f"{j+1}) {drinks[j]} {prices[j]}원 " for j in range(len(drinks))])
+menu_texts = menu_texts + f"{len(drinks) + 1}) 주문 종료 : "
 
 while True:
     menu = int(input(menu_texts))
