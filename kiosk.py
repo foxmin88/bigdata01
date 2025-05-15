@@ -1,3 +1,5 @@
+import datetime
+
 drinks = ["아이스 아메리카노", "카페 라떼", "수박 주스", "딸기 주스"]
 prices = [2000, 2500, 4000, 4200]
 amounts = [0] * len(drinks)
@@ -78,6 +80,7 @@ def print_receipt() -> None:
     영수증 출력 기능
     :return:
     """
+
     print(f"{'상품명':^20} {'단가':^6} {'수량':^6} {'금액':^6}")
     for i in range(len(drinks)):
         if amounts[i] > 0:
@@ -92,6 +95,7 @@ def print_receipt() -> None:
         print(f"총 결제 금액 : {discounted_price}원")
     else:
         print(f"결제 금액 : {total_price}")
+    print(f"현재 시각 : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 def test() -> None:
     pass
