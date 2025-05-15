@@ -8,6 +8,20 @@ DISCOUNT_THRESHOLD = 10000 # 할인이 적용되는 임계값 (임계값 이상�
 DISCOUNT_RATE = 0.1 # 할인율
 
 
+def run():
+    while True:
+        try:
+            menu = int(input(kk.display_menu()))
+            if len(kk.drinks) >= menu >= 1:
+                kk.order_process(menu - 1)
+            elif menu == len(kk.drinks) + 1:
+                print("주문을 종료합니다")
+                break
+            else:
+                print(f"{menu}번 메뉴는 존재하지 않습니다. 아래 메뉴에서 골라주세요")
+        except ValueError:
+            print(f"문자를 입력할 수 없습니다. 숫자를 입력해주세요")
+
 def apply_discount(price: int) -> float:
     """
         총 금액이 특정 금액(임계값)을 넘어서면 할인율 적용 함수
