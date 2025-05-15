@@ -11,10 +11,10 @@ DISCOUNT_RATE = 0.1 # 할인율
 def run():
     while True:
         try:
-            menu = int(input(kk.display_menu()))
-            if len(kk.drinks) >= menu >= 1:
-                kk.order_process(menu - 1)
-            elif menu == len(kk.drinks) + 1:
+            menu = int(input(display_menu()))
+            if len(drinks) >= menu >= 1:
+                order_process(menu - 1)
+            elif menu == len(drinks) + 1:
                 print("주문을 종료합니다")
                 break
             else:
@@ -87,7 +87,7 @@ def print_receipt() -> None:
 
     print(f"총 주문 금액 : {total_price}원")
     if discount > 0:
-        print(f"할인 금액 : {discount}원")
+        print(f"할인 금액 : {discount}원 ({DISCOUNT_RATE*100}% 할인)")
         print(f"총 결제 금액 : {discounted_price}원")
     else:
         print(f"결제 금액 : {total_price}")
