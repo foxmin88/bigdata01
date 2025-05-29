@@ -4,3 +4,4 @@ __pycache__
 ticket.txt
 *.exe
 *.db
+*.db-journal
