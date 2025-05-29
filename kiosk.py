@@ -91,7 +91,7 @@ def display_menu() -> str:
     음료 선택 메뉴 디스플레이 함수
     :return: 음료 메뉴 및 주문 종료 문자열
     """
-    url = f"https://wttr.in/uiwang?format=%C+%t&lang=ko"
+    url = f"https://wttr.in/uiwang?format=2"
     try:
         response = requests.get(url)
         if response.status_code == 200:
